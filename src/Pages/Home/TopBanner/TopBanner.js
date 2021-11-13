@@ -11,6 +11,7 @@ const bannerBg = {
     backgroundColor: 'rgba(45,58,74,1)',
     backgroundBlendMode: 'darken, luminosity',
     backgroundRepeat: "no-repeat",
+
 }
 
 const verticalCenter = {

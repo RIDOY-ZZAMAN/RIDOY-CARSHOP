@@ -4,7 +4,7 @@ import './Footer.css'
 const Footer = () => {
     return (
         <div className="footer">
-            <p>&copy;  2021 Ridoy Travel, All Rights Reserved. Design By AKTARUZZAMAN RIDOY</p>
+            <p>&copy;  2021 Ridoy CarShop, All Rights Reserved. Design By AKTARUZZAMAN RIDOY</p>
             <i className="fab fa-facebook"></i>
             <i style={{ margin: "0 20px" }} className="fab fa-twitter"></i>
             <i className="fab fa-dribbble"></i>
