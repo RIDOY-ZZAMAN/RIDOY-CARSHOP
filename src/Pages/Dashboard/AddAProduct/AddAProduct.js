@@ -1,4 +1,4 @@
-import { Button, TextField } from '@mui/material';
+import { Button, Container, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 
@@ -35,8 +35,10 @@ const AddAProduct = () => {
 
     }
     return (
-        <div>
-            <h2>Add A PRoducts</h2>
+        <Container>
+            <Typography variant="h5" sx={{ fontWeight: 600, color: 'info.main', mb: 3 }}>
+                ADD A PRODUCT
+            </Typography>
             <form onSubmit={handleProductSubmit}>
                 <TextField
                     sx={{
@@ -88,7 +90,7 @@ const AddAProduct = () => {
 
 
             </form>
-        </div>
+        </Container>
     );
 };
 

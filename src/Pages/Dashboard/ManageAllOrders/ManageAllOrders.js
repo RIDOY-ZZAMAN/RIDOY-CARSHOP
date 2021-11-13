@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Button, CircularProgress, Container, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 
@@ -65,8 +65,10 @@ const ManageAllOrders = () => {
 
 
     return (
-        <div>
-            <h2>Mange All Orders</h2>
+        <Container>
+            <Typography variant="h5" sx={{ fontWeight: 600, color: 'info.main', mb: 3 }}>
+                MANAGE ALL ORDERS
+            </Typography>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                     <TableContainer component={Paper}>
@@ -119,7 +121,7 @@ const ManageAllOrders = () => {
             </Grid>
 
 
-        </div>
+        </Container>
     );
 };
 

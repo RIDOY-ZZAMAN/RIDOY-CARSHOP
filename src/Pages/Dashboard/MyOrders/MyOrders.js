@@ -40,35 +40,37 @@ const MyOrders = () => {
 
 
     return (
-        <div>
-            <h2>Your Ordered {orders.length} Car</h2>
-            <Container>
-                <Grid container spacing={2}>
-
-                    {
-                        orders.length === 0 ? <div style={{ margin: "0 auto" }}><CircularProgress /></div>
-                            :
-                            orders.map(order => <Grid item xs={12} md={4} sm={6}>
-                                <Paper elevation={3} sx={{ py: 5 }} >
-                                    <Typography sx={{ color: 'info.main', fontWeight: 600 }} variant="h5" gutterBottom component="div">
-                                        {order._id}
-                                    </Typography>
-                                    <Typography variant="h6" gutterBottom component="div">
-                                        Name:  {order.product}
-                                    </Typography>
-                                    <Typography variant="h6" display="block" gutterBottom>
-                                        Status:   {order.status}
-                                    </Typography>
-                                    <Button onClick={() => handleDeleteOrder(order._id)} variant="contained">Cancel This Order</Button>
-                                </Paper>
-                            </Grid>)
-                    }
 
 
-                </Grid>
+        <Container>
+            <Typography variant="h5" sx={{ fontWeight: 600, color: 'info.main', mb: 3 }}>
+                Your Ordered {orders.length} Car
+            </Typography>
+            <Grid container spacing={2}>
 
-            </Container>
-        </div>
+                {
+                    orders.length === 0 ? <div style={{ margin: "0 auto" }}><CircularProgress /></div>
+                        :
+                        orders.map(order => <Grid item xs={12} md={4} sm={6}>
+                            <Paper elevation={3} sx={{ py: 5 }} >
+                                <Typography sx={{ color: 'info.main', fontWeight: 600 }} variant="h5" gutterBottom component="div">
+                                    {order._id}
+                                </Typography>
+                                <Typography variant="h6" gutterBottom component="div">
+                                    Name:  {order.product}
+                                </Typography>
+                                <Typography variant="h6" display="block" gutterBottom>
+                                    Status:   {order.status}
+                                </Typography>
+                                <Button onClick={() => handleDeleteOrder(order._id)} variant="contained">Cancel This Order</Button>
+                            </Paper>
+                        </Grid>)
+                }
+
+
+            </Grid>
+        </Container>
+
     );
 };
 

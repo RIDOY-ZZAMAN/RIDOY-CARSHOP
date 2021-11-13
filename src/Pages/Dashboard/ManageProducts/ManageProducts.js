@@ -32,32 +32,35 @@ const ManageProducts = () => {
 
     }
     return (
-        <div>
-            <Container>
-                <Grid container spacing={2}>
 
-                    {products.length === 0 ? <div style={{ margin: "0 auto" }}><CircularProgress /></div>
-                        :
-                        products.map(product => <Grid item xs={12} md={4} sm={6}>
-                            <Paper elevation={3} sx={{ py: 5 }} >
-                                <Typography sx={{ color: 'info.main', fontWeight: 600 }} variant="h5" gutterBottom component="div">
-                                    {product._id}
-                                </Typography>
-                                <Typography variant="h6" gutterBottom component="div">
-                                    Name:  {product.ProductName}
-                                </Typography>
+        <Container>
+            <Typography variant="h5" sx={{ fontWeight: 600, color: 'info.main', mb: 3 }}>
+                MANAGE ALL PRODUCTS
+            </Typography>
+            <Grid container spacing={2}>
 
-                                <Button onClick={() => handleDeleteProduct(product._id)} variant="contained">Delete This Product</Button>
-                            </Paper>
-                        </Grid>)
-                    }
+                {products.length === 0 ? <div style={{ margin: "0 auto" }}><CircularProgress /></div>
+                    :
+                    products.map(product => <Grid item xs={12} md={4} sm={6}>
+                        <Paper elevation={3} sx={{ py: 5 }} >
+                            <Typography sx={{ color: 'info.main', fontWeight: 600 }} variant="h5" gutterBottom component="div">
+                                {product._id}
+                            </Typography>
+                            <Typography variant="h6" gutterBottom component="div">
+                                Name:  {product.ProductName}
+                            </Typography>
+
+                            <Button onClick={() => handleDeleteProduct(product._id)} variant="contained">Delete This Product</Button>
+                        </Paper>
+                    </Grid>)
+                }
 
 
-                </Grid>
+            </Grid>
 
-            </Container>
+        </Container>
 
-        </div>
+
     );
 };
 

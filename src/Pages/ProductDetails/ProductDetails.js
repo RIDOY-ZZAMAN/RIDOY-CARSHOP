@@ -20,6 +20,7 @@ const ProductDetails = () => {
     const productRef = useRef();
     const statusRef = useRef()
     const addressRef = useRef();
+    const phoneRef = useRef();
     useEffect(() => {
         fetch('https://boiling-journey-86737.herokuapp.com/products')
             .then(res => res.json())
@@ -42,8 +43,9 @@ const ProductDetails = () => {
         const email = emailRef.current.value;
         const product = productRef.current.value;
         const address = addressRef.current.value;
+        const phone = phoneRef.current.value;
         const status = statusRef.current.value;
-        const ordering = { name, email, product, status, address };
+        const ordering = { name, email, product, status, address, phone };
         console.log(ordering);
         fetch('https://boiling-journey-86737.herokuapp.com/orders', {
             method: 'POST',
@@ -71,7 +73,6 @@ const ProductDetails = () => {
         <>
             <Navigation></Navigation>
             <Container>
-
                 <h1 > Purchase Our <span >{singleProduct?.ProductName}</span> Car </h1>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={5}>
@@ -101,7 +102,7 @@ const ProductDetails = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={12} md={7}>
-                        <form onSubmit={handlePlaceOrder} className="productorder">
+                        <form onSubmit={handlePlaceOrder} className="productorder" style={{ marginTop: "-30px" }}>
                             <Typography sx={{ mt: 3 }}>Product Name</Typography>
                             <input style={{ width: "80%", height: '30px', marginBottom: "15px" }} type="text" ref={productRef} value={singleProduct?.ProductName} name="" id="" />
                             <Typography >Your Name</Typography>
@@ -110,8 +111,10 @@ const ProductDetails = () => {
                             <input style={{ width: "80%", height: '30px', marginBottom: "15px" }} type="text" ref={emailRef} value={user?.email} name="" id="" />
                             <Typography>Your Address</Typography>
                             <input style={{ width: "80%", height: '30px', marginBottom: "15px" }} type="text" ref={addressRef} name="" id="" />
+                            <Typography>Your Phone</Typography>
+                            <input style={{ width: "80%", height: '30px', marginBottom: "15px" }} type="text" ref={phoneRef} name="" id="" />
                             <Typography>Status</Typography>
-                            <input style={{ width: "80%", height: '30px', marginBottom: "15px" }} type="text" ref={statusRef} value="Pending" /> <br /> <br />
+                            <input style={{ width: "80%", height: '30px', marginBottom: "10px" }} type="text" ref={statusRef} value="Pending" /> <br /> <br />
                             <Button sx={{ mb: 4 }} type="submit" variant="contained">Place Order</Button>
                         </form>
 

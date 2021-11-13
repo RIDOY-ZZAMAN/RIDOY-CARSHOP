@@ -43,24 +43,29 @@ function Dashboard(props) {
         <div className="dashboard">
             <Toolbar />
             <Divider />
-            <Link to="/home"><Button color="inherit">Home</Button></Link> <br />
+            <Link to="/home"><Button color="inherit">Home</Button></Link> <br /> <Divider />
+            <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link> <br /><Divider />
 
-            <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link> <br />
-            <Link to={`${path}/myorders`}><Button color="inherit">My Orders</Button></Link><br />
-            <Link to={`${path}/myreview`}><Button color="inherit">My Review</Button></Link><br />
-            <Link to={`${path}/payment`}><Button color="inherit">Payment</Button></Link>
+            {
+                !admin && <Box>
+
+                    <Link to={`${path}/myorders`}><Button color="inherit">My Orders</Button></Link><br /><Divider />
+                    <Link to={`${path}/myreview`}><Button color="inherit">Review</Button></Link><br /><Divider />
+                    <Link to={`${path}/payment`}><Button color="inherit">Pay</Button></Link>
+                </Box>
+            }
 
 
             {
                 admin && <Box>
-                    <Link to={`${path}/manageallorders`}><Button color="inherit">Manage All Orders</Button></Link>
-                    <Link to={`${path}/addaproduct`}><Button color="inherit">Add A Product</Button></Link>
-                    <Link to={`${path}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
-                    <Link to={`${path}/manageproducts`}><Button color="inherit">Manage All Products</Button></Link>
+                    <Link to={`${path}/manageallorders`}><Button color="inherit">Manage All Orders</Button></Link><Divider />
+                    <Link to={`${path}/addaproduct`}><Button color="inherit">Add A Product</Button></Link><Divider />
+                    <Link to={`${path}/makeadmin`}><Button color="inherit">Make Admin</Button></Link><Divider />
+                    <Link to={`${path}/manageproducts`}><Button color="inherit">Manage Products</Button></Link>
                 </Box>
             }
             <Divider />
-            <Button onClick={logOut} sx={{ color: 'blue' }} >Logout</Button>
+            <Button onClick={logOut} sx={{ color: 'blue' }} >Logout</Button><Divider />
 
 
         </div >

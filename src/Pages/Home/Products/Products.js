@@ -19,13 +19,14 @@ const Products = () => {
             </Typography>
             <Container>
                 <Grid container spacing={2}>
-                    {products.length === 0 ? <div style={{ margin: "0 auto" }}><CircularProgress /></div>
-                        :
-                        products.map(product => <Product
-                            key={product._id}
-                            product={product}
+                    {
+                        products.length === 0 ? <div style={{ margin: "0 auto" }}><CircularProgress /></div>
+                            :
+                            products.map(product => <Product
+                                key={product._id}
+                                product={product}
 
-                        ></Product>)
+                            ></Product>)
                     }
 
                 </Grid>

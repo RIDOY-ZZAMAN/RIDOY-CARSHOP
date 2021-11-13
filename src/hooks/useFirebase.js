@@ -53,7 +53,7 @@ const useFirebase = () => {
                 setAuthError('')
             })
             .catch((error) => {
-                setAuthError(error.message);
+                setAuthError("Your Password Or Email Was Wrong!!!");
             })
             .finally(() => setIsLoading(false))
     }

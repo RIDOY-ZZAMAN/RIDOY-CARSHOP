@@ -1,4 +1,4 @@
-import { Button, Grid } from '@mui/material';
+import { Button, Container, Grid, Typography } from '@mui/material';
 import React, { useRef, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import useAuth from '../../../hooks/useAuth';
@@ -42,14 +42,17 @@ const MyReview = () => {
 
 
     return (
-        <div className="myreview">
+        <Container className="myreview">
+            <Typography variant="h5" sx={{ fontWeight: 600, color: 'info.main' }}>
+                REVIEW
+            </Typography>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
                     <form onSubmit={handleRatingSumbit}>
                         <h5>Your Name</h5>
-                        <input style={{ width: "50%", height: '30px' }} type="text" ref={nameRef} value={user?.displayName} name="" id="" />
+                        <input style={{ width: "70%", height: '30px' }} type="text" ref={nameRef} value={user?.displayName} name="" id="" />
                         <h5>Your Email</h5>
-                        <input style={{ width: "50%", height: '30px' }} type="text" ref={emailRef} value={user?.email} name="" id="" />
+                        <input style={{ width: "70%", height: '30px' }} type="text" ref={emailRef} value={user?.email} name="" id="" />
                         <h5>Your Ratings</h5>
                         {[...Array(5)].map((star, i) => {
                             const ratingValue = i + 1;
@@ -65,7 +68,7 @@ const MyReview = () => {
                                     <FaStar
                                         className="star"
                                         color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
-                                        size={40}
+                                        size={50}
                                         onMouseEnter={() => setHover(ratingValue)}
                                         onMouseLeave={() => setHover(null)}
                                     />
@@ -74,7 +77,7 @@ const MyReview = () => {
                             )
                         })} <br />
 
-                        <textarea ref={reviewRef} name="" id="" style={{ width: "50%", height: '150px' }} placeholder="Please Write your Review Here"></textarea> <br />
+                        <textarea ref={reviewRef} name="" id="" style={{ width: "70%", height: '150px' }} placeholder="Please Write your Review Here"></textarea> <br />
 
                         <Button variant="contained" type="submit">Submit</Button>
 
@@ -83,7 +86,7 @@ const MyReview = () => {
                 </Grid>
             </Grid>
 
-        </div>
+        </Container>
     );
 };
 
