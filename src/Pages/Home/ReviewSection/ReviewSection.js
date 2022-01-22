@@ -2,6 +2,7 @@ import { CircularProgress, Container, Grid, Paper, Typography } from '@mui/mater
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import './ReviewSection.css'
+import reviewer from '../../../images/user-1.png'
 
 const ReviewSection = () => {
     const [reviews, setReviews] = useState([]);
@@ -15,8 +16,8 @@ const ReviewSection = () => {
 
 
     return (
-        <div>
-            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', my: 5 }}>
+        <div id="reviews">
+            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', mb: 5 }}>
                 OUR HAPPY CLIENT SAYS
             </Typography>
             <Container>
@@ -27,6 +28,7 @@ const ReviewSection = () => {
                             :
                             reviews.map(review => <Grid item xs={12} md={4} sm={6}>
                                 <Paper elevation={3} sx={{ py: 5 }} >
+                                    <img src={reviewer} alt="" />
                                     <Typography variant="h6" gutterBottom component="div">
                                         {review.name}
                                     </Typography>

@@ -15,6 +15,8 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import { HashLink, NavHashLink } from 'react-router-hash-link';
+
 
 
 const Navigation = () => {
@@ -117,10 +119,33 @@ const Navigation = () => {
                             <MenuIcon />
                         </IconButton>
                         <Typography className={navLogo} align="left" variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            RIDOY'S CARSHOP
+                            CARSHOP
                         </Typography>
                         <Link className={navItemContainer} to="/home" style={{ textDecoration: "none", color: "white" }}><Button color="inherit">Home</Button></Link>
-                        <Link className={navItemContainer} to="/allproducts" style={{ textDecoration: "none", color: "white" }}><Button variant="inherit">Explore</Button></Link>
+                        <NavHashLink
+                            smooth to="/home#about"
+                            style={{ textDecoration: "none", }}
+                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">About</Button></NavHashLink>
+                        <NavHashLink
+                            smooth to="/home#featuredcar"
+                            style={{ textDecoration: "none", }}
+                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Featured</Button></NavHashLink>
+                        <NavHashLink
+                            smooth to="/home#service"
+                            style={{ textDecoration: "none", }}
+                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Service</Button></NavHashLink>
+                        <NavHashLink
+                            smooth to="/home#reviews"
+                            style={{ textDecoration: "none", }}
+                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">REVIEWS</Button></NavHashLink>
+                        <NavHashLink
+                            smooth to="/home#contactus"
+                            style={{ textDecoration: "none", }}
+                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Contact us</Button></NavHashLink>
+
+
+
+
 
 
                         {
@@ -158,3 +183,6 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+
+{/* <Nav.Link as={HashLink} className={navItemContainer} to="/home#about" style={{ textDecoration: "none", color: "white" }}><Button variant="inherit">About</Button></Nav.Link> */ }

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Alert, Button, TextField, Typography } from '@mui/material';
+import useAuth from '../../../hooks/useAuth';
 
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
+    const { token } = useAuth()
 
 
     const handleAdminSumit = (e) => {
@@ -13,6 +15,7 @@ const MakeAdmin = () => {
         fetch('https://boiling-journey-86737.herokuapp.com/users/admin', {
             method: "PUT",
             headers: {
+                'authorization': `Bearer ${token}`,
                 'content-type': 'application/json'
 
             },

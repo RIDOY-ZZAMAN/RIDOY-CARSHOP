@@ -1,4 +1,4 @@
-import { Button, Grid, Paper, Typography } from '@mui/material';
+import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
 import { useHistory } from 'react-router';
 
@@ -10,28 +10,37 @@ const Product = ({ product }) => {
 
     }
     return (
-        <Grid item xs={12} md={4} sm={6}>
-            <Paper elevation={3} sx={{ py: 5, height: "300px" }} >
-                <img src={imgUrl} height='50%' width="100%" alt="" />
-                <Typography sx={{ color: 'info.main', fontWeight: 600 }} variant="h5" gutterBottom component="div">
-                    {_id}
-                </Typography>
-                <Typography variant="h6" gutterBottom component="div">
-                    {ProductName}
-                </Typography>
-                <Typography variant="caption" display="block" gutterBottom>
-                    ${Price}
-                </Typography>
-                <Typography variant="caption" display="block" gutterBottom>
-                    {Description}
-                </Typography>
-                <Button onClick={handleClick} variant="contained">BUY NOW</Button>
+        <Grid item xs={12} md={4} sm={6} >
+            <Card sx={{ maxWidth: 345, border: 2, borderColor: 'grey.500', boxShadow: 3 }}>
+                <CardActionArea >
+                    <CardMedia
+                        component="img"
+                        height="140"
+                        image={imgUrl}
+                        alt="car"
+                        sx={{ py: 2 }}
 
 
-            </Paper>
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Brand: {ProductName}
+                        </Typography>
+                        <Typography variant="h5" color="text.primary">
+                            Price: ${Price}
+                        </Typography>
+                        <Typography sx={{ textAlign: "center" }} variant="body2" color="text.secondary">
+                            {Description}
+                        </Typography>
+                        <Button sx={{ mt: 2 }} onClick={handleClick} variant="contained">BUY NOW</Button>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
 
-        </Grid>
+        </Grid >
     );
 };
 
 export default Product;
+
+

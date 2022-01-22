@@ -13,12 +13,12 @@ const Products = () => {
 
     }, [])
     return (
-        <div>
-            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', my: 5 }}>
-                OUR PRODUCTS
+        <div id="featuredcar">
+            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', mb: 5 }}>
+                FEATURED CARS
             </Typography>
             <Container>
-                <Grid container spacing={2}>
+                <Grid container spacing={4}>
                     {
                         products.length === 0 ? <div style={{ margin: "0 auto" }}><CircularProgress /></div>
                             :
