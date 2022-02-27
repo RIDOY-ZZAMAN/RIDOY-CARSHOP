@@ -33,6 +33,38 @@ const Login = () => {
     return (
         <Container>
             <Grid container spacing={2}>
+
+                <Grid item xs={10} md={6}>
+                    {/* <img src={img} height="85%" width="100%" alt="" /> */}
+                    <Box
+                        sx={{
+                            boxShadow: 2,
+                            width: '24rem',
+                            height: '15rem',
+                            bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
+                            color: (theme) =>
+                                theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800',
+                            p: 1,
+                            m: 1,
+                            borderRadius: 2,
+                            textAlign: 'start',
+                            fontSize: '0.875rem',
+                            fontWeight: '700',
+                            marginTop: 10
+                        }}
+                    >
+                        <Typography variant='h3'>
+                            Login As User
+                        </Typography>
+                        <hr />
+
+                        <Typography variant='h4'>
+                            Email: user@umail.com <br />
+                            Password: 123456
+                        </Typography>
+                    </Box>
+
+                </Grid>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                     <Typography variant="h4" gutterBottom>
                         Login
@@ -86,37 +118,6 @@ const Login = () => {
                     <Button onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
 
 
-
-                </Grid>
-                <Grid item xs={10} md={6}>
-                    {/* <img src={img} height="85%" width="100%" alt="" /> */}
-                    <Box
-                        sx={{
-                            boxShadow: 2,
-                            width: '28rem',
-                            height: '15rem',
-                            bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
-                            color: (theme) =>
-                                theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800',
-                            p: 1,
-                            m: 1,
-                            borderRadius: 2,
-                            textAlign: 'center',
-                            fontSize: '0.875rem',
-                            fontWeight: '700',
-                            marginTop: 10
-                        }}
-                    >
-                        <Typography variant='h3'>
-                            Login As User
-                        </Typography>
-                        <hr />
-
-                        <Typography variant='h4'>
-                            Email: user@umail.com <br />
-                            Password: 123456
-                        </Typography>
-                    </Box>
 
                 </Grid>
 
