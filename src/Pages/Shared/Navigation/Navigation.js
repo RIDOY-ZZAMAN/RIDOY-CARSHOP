@@ -16,6 +16,8 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { HashLink, NavHashLink } from 'react-router-hash-link';
+import './Navigation.css'
+
 
 
 
@@ -57,6 +59,12 @@ const Navigation = () => {
                 <ListItem button>
                     <ListItemText>
                         <Link to="/home" style={{ textDecoration: "none", }}>Home</Link>
+                    </ListItemText>
+                </ListItem>
+                <Divider />
+                <ListItem button>
+                    <ListItemText>
+                        <Link to="/home#about" style={{ textDecoration: "none", }}>About</Link>
                     </ListItemText>
                 </ListItem>
                 <Divider />
@@ -122,26 +130,28 @@ const Navigation = () => {
                             CARSHOP
                         </Typography>
                         <Link className={navItemContainer} to="/home" style={{ textDecoration: "none", color: "white" }}><Button color="inherit">Home</Button></Link>
-                        <NavHashLink
-                            smooth to="/home#about"
-                            style={{ textDecoration: "none", }}
-                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">About</Button></NavHashLink>
-                        <NavHashLink
-                            smooth to="/home#featuredcar"
-                            style={{ textDecoration: "none", }}
-                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Featured</Button></NavHashLink>
-                        <NavHashLink
-                            smooth to="/home#service"
-                            style={{ textDecoration: "none", }}
-                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Service</Button></NavHashLink>
-                        <NavHashLink
-                            smooth to="/home#reviews"
-                            style={{ textDecoration: "none", }}
-                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">REVIEWS</Button></NavHashLink>
-                        <NavHashLink
-                            smooth to="/home#contactus"
-                            style={{ textDecoration: "none", }}
-                        > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Contact us</Button></NavHashLink>
+                        <div className='NavHashLink'>
+                            <NavHashLink
+                                smooth to="/home#about"
+                                style={{ textDecoration: "none", }}
+                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">About</Button></NavHashLink>
+                            <NavHashLink
+                                smooth to="/home#featuredcar"
+                                style={{ textDecoration: "none", }}
+                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Featured</Button></NavHashLink>
+                            <NavHashLink
+                                smooth to="/home#service"
+                                style={{ textDecoration: "none", }}
+                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Service</Button></NavHashLink>
+                            <NavHashLink
+                                smooth to="/home#reviews"
+                                style={{ textDecoration: "none", }}
+                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">REVIEWS</Button></NavHashLink>
+                            <NavHashLink
+                                smooth to="/home#contactus"
+                                style={{ textDecoration: "none", }}
+                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Contact us</Button></NavHashLink>
+                        </div>
 
 
 

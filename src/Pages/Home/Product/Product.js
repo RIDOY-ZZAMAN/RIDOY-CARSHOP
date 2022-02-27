@@ -1,6 +1,7 @@
 import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
 import { useHistory } from 'react-router';
+import './Product.css';
 
 const Product = ({ product }) => {
     const { imgUrl, _id, ProductName, Price, Description } = product;
@@ -10,7 +11,7 @@ const Product = ({ product }) => {
 
     }
     return (
-        <Grid item xs={12} md={4} sm={6} >
+        <Grid className='productGrid' item xs={12} md={4} sm={6} >
             <Card sx={{ maxWidth: 345, border: 2, borderColor: 'grey.500', boxShadow: 3 }}>
                 <CardActionArea >
                     <CardMedia

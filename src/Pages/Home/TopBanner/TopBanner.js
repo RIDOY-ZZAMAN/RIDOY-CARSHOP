@@ -2,8 +2,9 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Button, Typography, Container, Paper } from '@mui/material';
 import { Box } from '@mui/system';
-import car from '../../../images/car3.png'
+import car from '../../../images/car3.png';
 import { Link } from 'react-router-dom';
+import './TopBanner.css';
 
 const bannerBg = {
     background: 'rgba(45,58,74,1)',
@@ -15,7 +16,7 @@ const bannerBg = {
 const verticalCenter = {
     display: 'flex',
     alignItems: 'center',
-    height: 550,
+    height: 500,
 }
 
 const TopBanner = () => {
@@ -25,7 +26,7 @@ const TopBanner = () => {
             <Box style={bannerBg} sx={{ flexGrow: 1 }}>
                 <Grid sx={{ mt: 0.1 }} container spacing={2}>
                     <Grid style={{ ...verticalCenter, textAlign: 'left' }} item xs={12} md={7}>
-                        <Box sx={{ ml: 12 }}>
+                        <Box className="TopBanner" >
                             <Typography sx={{ color: 'wheat', fontWeight: "900" }} variant="h3">
                                 Find Your Desired <br />
                                 Cars Here

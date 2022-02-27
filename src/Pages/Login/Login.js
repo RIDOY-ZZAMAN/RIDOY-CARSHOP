@@ -1,4 +1,4 @@
-import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
+import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography, Box } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
@@ -88,8 +88,36 @@ const Login = () => {
 
 
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <img src={img} height="85%" width="100%" alt="" />
+                <Grid item xs={10} md={6}>
+                    {/* <img src={img} height="85%" width="100%" alt="" /> */}
+                    <Box
+                        sx={{
+                            boxShadow: 2,
+                            width: '28rem',
+                            height: '15rem',
+                            bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
+                            color: (theme) =>
+                                theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800',
+                            p: 1,
+                            m: 1,
+                            borderRadius: 2,
+                            textAlign: 'center',
+                            fontSize: '0.875rem',
+                            fontWeight: '700',
+                            marginTop: 10
+                        }}
+                    >
+                        <Typography variant='h3'>
+                            Login As User
+                        </Typography>
+                        <hr />
+
+                        <Typography variant='h4'>
+                            Email: user@umail.com <br />
+                            Password: 123456
+                        </Typography>
+                    </Box>
+
                 </Grid>
 
             </Grid>
