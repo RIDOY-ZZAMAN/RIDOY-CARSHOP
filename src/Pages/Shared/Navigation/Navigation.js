@@ -15,13 +15,40 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { HashLink, NavHashLink } from 'react-router-hash-link';
-import './Navigation.css'
+import { NavHashLink } from 'react-router-hash-link';
+import './Navigation.css';
+
+//Paralaxx nav
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import PropTypes from 'prop-types';
+
+function ElevationScroll(props) {
+    const { children, window } = props;
+    // Note that you normally won't need to set the window ref as useScrollTrigger
+    // will default to window.
+    // This is only being set here because the demo is in an iframe.
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+        target: window ? window() : undefined,
+    });
+
+    return React.cloneElement(children, {
+        elevation: trigger ? 4 : 0,
+    });
+}
+
+ElevationScroll.propTypes = {
+    children: PropTypes.element.isRequired,
+    /**
+     * Injected by the documentation to work in an iframe.
+     * You won't need it on your project.
+     */
+    window: PropTypes.func,
+};
 
 
-
-
-const Navigation = () => {
+const Navigation = (props) => {
     const { user, logOut } = useAuth();
     const theme = useTheme();
     const useStyle = makeStyles({
@@ -48,9 +75,10 @@ const Navigation = () => {
     })
     const { navIcon, navItemContainer, navLogo } = useStyle();
     const [state, setState] = React.useState(false);
+
     const list = (
         <Box
-            sx={{ width: 250 }}
+            sx={{ width: 250, }}
             role="presentation"
 
         >
@@ -112,66 +140,68 @@ const Navigation = () => {
     );
     return (
         <>
-            <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static">
-                    <Toolbar>
-                        <IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            sx={{ mr: 2 }}
-                            className={navIcon}
-                            onClick={() => setState(true)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography className={navLogo} align="left" variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            CARSHOP
-                        </Typography>
-                        <Link className={navItemContainer} to="/home" style={{ textDecoration: "none", color: "white" }}><Button color="inherit">Home</Button></Link>
-                        <div className='NavHashLink'>
-                            <NavHashLink
-                                smooth to="/home#about"
-                                style={{ textDecoration: "none", }}
-                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">About</Button></NavHashLink>
-                            <NavHashLink
-                                smooth to="/home#featuredcar"
-                                style={{ textDecoration: "none", }}
-                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Featured</Button></NavHashLink>
-                            <NavHashLink
-                                smooth to="/home#service"
-                                style={{ textDecoration: "none", }}
-                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Service</Button></NavHashLink>
-                            <NavHashLink
-                                smooth to="/home#reviews"
-                                style={{ textDecoration: "none", }}
-                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">REVIEWS</Button></NavHashLink>
-                            <NavHashLink
-                                smooth to="/home#contactus"
-                                style={{ textDecoration: "none", }}
-                            > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Contact us</Button></NavHashLink>
-                        </div>
+            <Box sx={{ flexGrow: 1, }}>
+                <ElevationScroll {...props}>
+                    <AppBar>
+                        <Toolbar sx={{ backgroundColor: "indigo" }}>
+                            <IconButton
+                                size="large"
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                sx={{ mr: 2 }}
+                                className={navIcon}
+                                onClick={() => setState(true)}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Typography className={navLogo} align="left" variant="h6" component="div" sx={{ flexGrow: 1, }}>
+                                CARSHOP
+                            </Typography>
+                            <Link className={navItemContainer} to="/home" style={{ textDecoration: "none", color: "white" }}><Button color="inherit">Home</Button></Link>
+                            <div className='NavHashLink'>
+                                <NavHashLink
+                                    smooth to="/home#about"
+                                    style={{ textDecoration: "none", }}
+                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">About</Button></NavHashLink>
+                                <NavHashLink
+                                    smooth to="/home#featuredcar"
+                                    style={{ textDecoration: "none", }}
+                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Featured</Button></NavHashLink>
+                                <NavHashLink
+                                    smooth to="/home#service"
+                                    style={{ textDecoration: "none", }}
+                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Service</Button></NavHashLink>
+                                <NavHashLink
+                                    smooth to="/home#reviews"
+                                    style={{ textDecoration: "none", }}
+                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">REVIEWS</Button></NavHashLink>
+                                <NavHashLink
+                                    smooth to="/home#contactus"
+                                    style={{ textDecoration: "none", }}
+                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Contact us</Button></NavHashLink>
+                            </div>
 
 
 
 
 
 
-                        {
-                            user?.email ?
-                                <Box className={navItemContainer}>
-                                    <NavLink style={{ textDecoration: "none", color: "white" }} to="/dashboard"> <Button color="inherit">Dashboard</Button></NavLink>
-                                    <span style={{ color: "white", fontWeight: "bold", paddingTop: "10px" }}>{user ? user.displayName : user.email}</span>
-                                    <Button onClick={logOut} color="inherit">Logout</Button>
-                                </Box>
+                            {
+                                user?.email ?
+                                    <Box className={navItemContainer}>
+                                        <NavLink style={{ textDecoration: "none", color: "white" }} to="/dashboard"> <Button color="inherit">Dashboard</Button></NavLink>
+                                        <span style={{ color: "white", fontWeight: "bold", paddingTop: "10px" }}>{user ? user.displayName : user.email}</span>
+                                        <Button onClick={logOut} color="inherit">Logout</Button>
+                                    </Box>
 
-                                :
-                                <NavLink className={navItemContainer} style={{ textDecoration: "none", color: "white" }} to="/login"> <Button color="inherit">Login</Button></NavLink>
-                        }
+                                    :
+                                    <NavLink className={navItemContainer} style={{ textDecoration: "none", color: "white" }} to="/login"> <Button color="inherit">Login</Button></NavLink>
+                            }
 
-                    </Toolbar>
-                </AppBar>
+                        </Toolbar>
+                    </AppBar>
+                </ElevationScroll>
             </Box>
             <div>
 
@@ -195,4 +225,3 @@ const Navigation = () => {
 export default Navigation;
 
 
-{/* <Nav.Link as={HashLink} className={navItemContainer} to="/home#about" style={{ textDecoration: "none", color: "white" }}><Button variant="inherit">About</Button></Nav.Link> */ }

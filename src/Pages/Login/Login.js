@@ -2,7 +2,7 @@ import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography
 import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import img from '../../images/login.jpg'
+
 
 
 
@@ -65,7 +65,7 @@ const Login = () => {
                     </Box>
 
                 </Grid>
-                <Grid item sx={{ mt: 8 }} xs={12} md={6}>
+                <Grid item sx={{ mt: 8, boxShadow: 2, p: 3, borderRadius: 2 }} xs={12} md={6}>
                     <Typography variant="h4" gutterBottom>
                         Login
                     </Typography>

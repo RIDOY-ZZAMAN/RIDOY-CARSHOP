@@ -28,8 +28,8 @@ const Register = () => {
     }
     return (
         <Container>
-            <Grid container spacing={2}>
-                <Grid item sx={{ mt: 8 }} xs={12} md={6}>
+            <Grid container spacing={2} >
+                <Grid item sx={{ mt: 8, boxShadow: 2, borderRadius: 2, height: "70vh" }} xs={12} md={6}>
                     <Typography variant="h4" gutterBottom>
                         Register
                     </Typography>
@@ -84,7 +84,7 @@ const Register = () => {
 
                         <Button sx={{
                             width: '75%',
-                            m: 1
+                            my: 3
                         }} variant="contained" type='submit'>Register</Button>
 
                         <NavLink style={{ textDecoration: "none" }}
@@ -104,7 +104,7 @@ const Register = () => {
                     }
 
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} sx={{ mt: 8 }}>
                     <img src={img} height="85%" width="100%" alt="" />
                 </Grid>
 

@@ -1,6 +1,8 @@
 import { CircularProgress, Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import Product from '../Product/Product';
+
+import Product from '../Product/Product';;
+
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -18,6 +20,7 @@ const Products = () => {
                 FEATURED CARS
             </Typography>
             <Container>
+
                 <Grid container spacing={4}>
                     {
                         products.length === 0 ? <div style={{ margin: "0 auto" }}><CircularProgress /></div>
@@ -25,11 +28,14 @@ const Products = () => {
                             products.map(product => <Product
                                 key={product._id}
                                 product={product}
+                            ></Product>
 
-                            ></Product>)
+                            )
                     }
 
                 </Grid>
+
+
 
             </Container>
 

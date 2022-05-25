@@ -1,7 +1,7 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import serviceImg from '../../../images/serviceImg.JPG';
+
 
 const Services = () => {
     return (

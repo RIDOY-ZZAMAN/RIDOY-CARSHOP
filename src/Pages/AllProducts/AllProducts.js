@@ -15,7 +15,7 @@ const AllProducts = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', my: 5 }}>
+            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', mt: 10, mb: 3 }}>
                 ALL PRODUCTS
             </Typography>
             <Container>
