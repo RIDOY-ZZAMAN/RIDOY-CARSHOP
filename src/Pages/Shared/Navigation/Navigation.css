@@ -1,7 +1,10 @@
+.link-common {
+    color: black !important;
+}
 
 @media only screen and (max-width: 600px) {
-    .NavHashLink{
+    .NavHashLink {
         display: none;
-       
+
     }
-  }
+}

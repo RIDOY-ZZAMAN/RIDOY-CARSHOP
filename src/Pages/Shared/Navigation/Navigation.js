@@ -126,7 +126,7 @@ const Navigation = (props) => {
                     <Box>
                         <ListItem button>
                             <ListItemText>
-                                <Link to="/login" style={{ textDecoration: "none", }}>Login</Link>
+                                <Link to="/login" style={{ textDecoration: "none" }}>Login</Link>
                             </ListItemText>
                         </ListItem>
                         <Divider />
@@ -143,7 +143,7 @@ const Navigation = (props) => {
             <Box sx={{ flexGrow: 1, }}>
                 <ElevationScroll {...props}>
                     <AppBar>
-                        <Toolbar sx={{ backgroundColor: "indigo" }}>
+                        <Toolbar sx={{ backgroundColor: "#FFFFFF" }}>
                             <IconButton
                                 size="large"
                                 edge="start"
@@ -155,31 +155,31 @@ const Navigation = (props) => {
                             >
                                 <MenuIcon />
                             </IconButton>
-                            <Typography className={navLogo} align="left" variant="h6" component="div" sx={{ flexGrow: 1, }}>
-                                CARSHOP
+                            <Typography className={navLogo} align="left" variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: "bold", fontSize: "2rem" }}>
+                                <span style={{ color: "#2C90B9" }}>CAR</span> <span style={{ color: "#e3376e" }}>SHOP</span>
                             </Typography>
-                            <Link className={navItemContainer} to="/home" style={{ textDecoration: "none", color: "white" }}><Button color="inherit">Home</Button></Link>
+                            <Link className={navItemContainer} to="/home" style={{ textDecoration: "none", color: "white" }}><Button sx={{ color: "black", fontWeight: "bold" }}>Home</Button></Link>
                             <div className='NavHashLink'>
                                 <NavHashLink
                                     smooth to="/home#about"
                                     style={{ textDecoration: "none", }}
-                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">About</Button></NavHashLink>
+                                > <Button style={{ textDecoration: "none", color: "black", fontWeight: "bold" }} variant="inherit">About</Button></NavHashLink>
                                 <NavHashLink
                                     smooth to="/home#featuredcar"
                                     style={{ textDecoration: "none", }}
-                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Featured</Button></NavHashLink>
+                                > <Button style={{ textDecoration: "none", color: "black", fontWeight: "bold" }} variant="inherit">Featured</Button></NavHashLink>
                                 <NavHashLink
                                     smooth to="/home#service"
                                     style={{ textDecoration: "none", }}
-                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Service</Button></NavHashLink>
+                                > <Button style={{ textDecoration: "none", color: "black", fontWeight: "bold" }} variant="inherit">Service</Button></NavHashLink>
                                 <NavHashLink
                                     smooth to="/home#reviews"
                                     style={{ textDecoration: "none", }}
-                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">REVIEWS</Button></NavHashLink>
+                                > <Button style={{ textDecoration: "none", color: "black", fontWeight: "bold" }} variant="inherit">REVIEWS</Button></NavHashLink>
                                 <NavHashLink
                                     smooth to="/home#contactus"
                                     style={{ textDecoration: "none", }}
-                                > <Button style={{ textDecoration: "none", color: "white" }} variant="inherit">Contact us</Button></NavHashLink>
+                                > <Button style={{ textDecoration: "none", color: "black", fontWeight: "bold" }} variant="inherit">Contact us</Button></NavHashLink>
                             </div>
 
 
@@ -190,13 +190,13 @@ const Navigation = (props) => {
                             {
                                 user?.email ?
                                     <Box className={navItemContainer}>
-                                        <NavLink style={{ textDecoration: "none", color: "white" }} to="/dashboard"> <Button color="inherit">Dashboard</Button></NavLink>
-                                        <span style={{ color: "white", fontWeight: "bold", paddingTop: "10px" }}>{user ? user.displayName : user.email}</span>
-                                        <Button onClick={logOut} color="inherit">Logout</Button>
+                                        <NavLink style={{ textDecoration: "none", color: "white" }} to="/dashboard"> <Button style={{ textDecoration: "none", color: "black", fontWeight: "bold" }}>Dashboard</Button></NavLink>
+                                        <span style={{ color: "red", fontWeight: "bold", fontSize: "1rem", paddingTop: "10px" }}>{user ? user.displayName.toUpperCase() : user.email}</span>
+                                        <Button onClick={logOut} style={{ color: "black", fontWeight: "bold" }}>Logout</Button>
                                     </Box>
 
                                     :
-                                    <NavLink className={navItemContainer} style={{ textDecoration: "none", color: "white" }} to="/login"> <Button color="inherit">Login</Button></NavLink>
+                                    <NavLink className={navItemContainer} style={{ textDecoration: "none", color: "white" }} to="/login"> <Button style={{ color: "black", fontWeight: "bold" }}>Login</Button></NavLink>
                             }
 
                         </Toolbar>

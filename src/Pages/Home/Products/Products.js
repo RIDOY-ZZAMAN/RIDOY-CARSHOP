@@ -1,7 +1,8 @@
 import { CircularProgress, Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 
-import Product from '../Product/Product';;
+import Product from '../Product/Product';
+import './Products.css'
 
 
 const Products = () => {
@@ -17,7 +18,7 @@ const Products = () => {
     return (
         <div id="featuredcar">
             <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', mb: 5 }}>
-                FEATURED CARS
+                <span style={{ color: "#2C90B9" }}>  FEATURED</span> <span style={{ color: "#e3376e" }}> CARS</span>
             </Typography>
             <Container>
 

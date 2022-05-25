@@ -1,11 +1,49 @@
-.TopBanner{
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla&display=swap');
+
+.font-tamil {
+    font-family: 'Anek Tamil', sans-serif;
+}
+
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-anek-bangla {
+    font-family: 'Anek Bangla', sans-serif;
+}
+
+.TopBanner {
     margin-left: 100px;
 }
 
+.btn-common {
+    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)
+}
+
+.btn-common {
+    margin: 10px;
+    padding: 10px 45px !important;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 15px !important;
+    display: block;
+}
+
+.btn-common:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
 
 @media only screen and (max-width: 600px) {
-   
-.TopBanner{
-    margin-left: 50px;
-}
+
+    .TopBanner {
+        margin-left: 50px;
+    }
 }

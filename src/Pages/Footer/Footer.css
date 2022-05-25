@@ -1,7 +1,14 @@
-.footer{
-    background-color: #282C34;
+footer {
+    background: url("../../images/elementdot.png") no-repeat bottom left;
+
+}
+
+.footer {
+
+    background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%) !important;
     color: white;
     line-height: 60px;
     margin-top: -40px;
+
 
 }

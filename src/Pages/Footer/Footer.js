@@ -5,10 +5,9 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <>
+        <div className="footer">
 
-
-            <div className="footer">
+            <footer>
                 <p>&copy;  2021 Ridoy CarShop, All Rights Reserved. Design By AKTARUZZAMAN RIDOY</p>
                 <i className="fab fa-facebook"></i>
                 <i style={{ margin: "0 20px" }} className="fab fa-twitter"></i>
@@ -18,8 +17,8 @@ const Footer = () => {
                     smooth to="/home#home"
                     style={{ textDecoration: "none" }}
                 > <Button>    <i style={{ color: "white" }} class="far fa-arrow-alt-circle-up fa-4x"></i></Button></NavHashLink>
-            </div>
-        </>
+            </footer>
+        </div>
     );
 };
 

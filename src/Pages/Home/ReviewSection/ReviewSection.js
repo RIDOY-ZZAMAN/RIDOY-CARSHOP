@@ -21,8 +21,9 @@ const ReviewSection = () => {
 
     return (
         <div id="reviews">
-            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', mb: 5 }}>
-                OUR HAPPY CLIENT SAYS
+            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', my: 5 }}>
+                <span style={{ color: "#2C90B9" }}> OUR HAPPY</span> <span style={{ color: "#e3376e" }}> CLIENT SAYS</span>
+
             </Typography>
             <Container>
                 <Grid container spacing={2}>

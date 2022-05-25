@@ -14,8 +14,8 @@ const AboutUs = () => {
                     <Grid container spacing={2} p={"20px"}>
                         <Grid item xs={12} md={7} className='aboutus animate__animated animate__backInLeft'>
                             <Bounce left>
-                                <Typography variant="h4" sx={{ fontWeight: "bold", color: 'info.main', }}>
-                                    ABOUT US
+                                <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                                    <span style={{ color: "#2C90B9" }}>ABOUT</span> <span style={{ color: "#e3376e" }}>US</span>
                                 </Typography>
                                 <p style={{ textAlign: "justify", paddingLeft: "3px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet, <br /> <br />consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br /> <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                             </Bounce>

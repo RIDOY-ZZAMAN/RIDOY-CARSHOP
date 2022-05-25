@@ -3,12 +3,13 @@ import { Box } from '@mui/system';
 import React from 'react';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 
-import img from '../../../images/contact.svg'
+import img from '../../../images/contact.svg';
+import './ContactUs.css';
 
 
 const contactUsBanner = {
 
-    background: '#F2F2F2'
+    // background: '#F2F2F2'
 
 }
 
@@ -19,17 +20,13 @@ const hanldeContactUs = (e) => {
 const ContactUs = () => {
     return (
         <div id="contactus" >
-            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', my: 5 }}>
-                CONTACT US
+            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', mt: 2 }}>
+                <span style={{ color: "#2C90B9" }}>CONTACT</span> <span style={{ color: "#e3376e" }}>US</span>
+
             </Typography>
-            <Box style={contactUsBanner} sx={{ my: 5, textAlign: "center" }}>
+            <Box style={contactUsBanner} sx={{ mb: 5, textAlign: "center" }}>
                 <Grid container spacing={2} sx={{ p: 5 }}>
-                    <Grid item xs={12} md={6}>
-
-
-                        {/* </Grid>
-                    <Grid item xs={12} md={7} > */}
-
+                    <Grid item xs={12} md={6} sx={{ borderRadius: 2, boxShadow: 2 }}>
                         <Typography variant="h4" sx={{ color: 'dark', mb: 5 }}>
                             Always Connect With US
                         </Typography>

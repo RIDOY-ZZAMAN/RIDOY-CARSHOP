@@ -8,8 +8,9 @@ import './TopBanner.css';
 import Fade from 'react-reveal/Fade';
 
 const bannerBg = {
-    background: '#F2F2F2',
+    background: '#FFFFFF',
     backgroundRepeat: "no-repeat",
+
 
 }
 
@@ -28,16 +29,17 @@ const TopBanner = () => {
                     <Grid style={{ ...verticalCenter, textAlign: 'left' }} item xs={12} md={7}>
                         <Fade right>
                             <Box className="TopBanner" >
-                                <Typography sx={{ color: 'black', fontWeight: "900" }} variant="h3">
+                                <Typography sx={{ fontWeight: "500", color: "#2C90B9" }} variant="h3">
                                     Find Your Desired <br />
-                                    Cars Here
+                                    <span style={{ color: "#e3376e" }} >  Cars Here. </span>
+
                                 </Typography>
 
                                 <Typography variant="h6" sx={{ my: 4, fontSize: 14, color: 'black', fontWeight: 600 }}>
                                     Best Car Selling Shop At Your Area <br />
                                     You Will Find the Latest Cars Here
                                 </Typography>
-                                <Link to="/allproducts" style={{ textDecoration: "none", color: "white" }}><Button variant="contained" sx={{ px: 8 }}>Explore</Button></Link>
+                                <Link to="/allproducts" style={{ textDecoration: "none", color: "white" }}><Button variant="contained" sx={{ px: 8 }} className="btn-common">Explore</Button></Link>
 
                             </Box>
                         </Fade>

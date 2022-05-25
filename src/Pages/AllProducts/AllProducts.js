@@ -15,8 +15,9 @@ const AllProducts = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <Typography variant="h4" sx={{ fontWeight: 600, color: 'info.main', mt: 10, mb: 3 }}>
-                ALL PRODUCTS
+            <Typography variant="h4" sx={{ fontWeight: 600, mt: 10, mb: 3 }}>
+                <span style={{ color: "#2C90B9" }}> ALL</span> <span style={{ color: "#e3376e" }}> PRODUCTS</span>
+
             </Typography>
             <Container>
                 <Grid container spacing={2}>

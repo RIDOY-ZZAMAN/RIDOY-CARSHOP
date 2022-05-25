@@ -14,8 +14,8 @@ const Product = ({ product }) => {
 
         <Grid className='productGrid' item xs={12} md={4} sm={6} >
             <Zoom left>
-                <Paper elevation={24} >
-                    <Card sx={{ borderRadius: 2 }}  >
+                <Paper elevation={24} sx={{ borderRadius: 4 }}  >
+                    <Card sx={{ borderRadius: 4 }}  >
                         <CardActionArea >
                             <CardMedia
                                 component="img"
@@ -36,7 +36,7 @@ const Product = ({ product }) => {
                                 <Typography sx={{ textAlign: "center" }} variant="body2" color="text.secondary">
                                     {Description}
                                 </Typography>
-                                <Button sx={{ mt: 2 }} onClick={handleClick} variant="contained">BUY NOW</Button>
+                                <Button sx={{ mt: 2 }} className="btn-common" onClick={handleClick} variant="contained">BUY NOW</Button>
                             </CardContent>
                         </CardActionArea>
                     </Card>
