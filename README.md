@@ -12,6 +12,7 @@ live site link: https://assignment12-1ebce.web.app/
 * Firebase Google and Email-Password Sing In Sytem Implemented.
 * MUI was used to design the whole website.
 # Future Work
-* JWT token and payment system will be added very soon.
+* Payment system will be added very soon.
+* UI will be more professional.
 
 
