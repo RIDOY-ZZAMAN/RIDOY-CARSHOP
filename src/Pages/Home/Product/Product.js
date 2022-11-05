@@ -1,3 +1,4 @@
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Button,
   Card,
@@ -8,15 +9,63 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import React from "react";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import IconButton from "@mui/material/IconButton";
+import { styled } from "@mui/material/styles";
+import React, { useState } from "react";
 import Zoom from "react-reveal/Zoom";
 import { useHistory } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 import "./Product.css";
+
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(2),
+  },
+  "& .MuiDialogActions-root": {
+    padding: theme.spacing(1),
+  },
+}));
+
+function BootstrapDialogTitle(props) {
+  const { children, onClose, ...other } = props;
+
+  return (
+    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+      {children}
+      {onClose ? (
+        <IconButton
+          aria-label="close"
+          onClick={onClose}
+          sx={{
+            position: "absolute",
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      ) : null}
+    </DialogTitle>
+  );
+}
+
 const Product = ({ product }) => {
   const { imgUrl, _id, ProductName, Price, Description } = product;
   const history = useHistory();
   const { user } = useAuth();
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = (productID) => {
+    setOpen(true);
+    console.log(productID);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   const handleClick = () => {
     history.push(`/productDetails/${_id}`);
     console.log(user);
@@ -29,7 +78,7 @@ const Product = ({ product }) => {
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="140"
+                height="180"
                 image={imgUrl}
                 alt="car"
                 sx={{ py: 3 }}
@@ -38,16 +87,7 @@ const Product = ({ product }) => {
                 <Typography gutterBottom variant="h5" component="div">
                   Brand: {ProductName}
                 </Typography>
-                <Typography variant="h5" color="text.primary">
-                  Price: ${Price}
-                </Typography>
-                <Typography
-                  sx={{ textAlign: "center" }}
-                  variant="body2"
-                  color="text.secondary"
-                >
-                  {Description}
-                </Typography>
+
                 {user.email && (
                   <Button
                     sx={{ mt: 2 }}
@@ -57,6 +97,55 @@ const Product = ({ product }) => {
                   >
                     BUY NOW
                   </Button>
+                )}
+                {!user.email && (
+                  <div>
+                    <Button
+                      variant="outlined"
+                      onClick={() => handleClickOpen(_id)}
+                    >
+                      See Details
+                    </Button>
+                    <BootstrapDialog
+                      onClose={handleClose}
+                      aria-labelledby="customized-dialog-title"
+                      open={open}
+                    >
+                      <BootstrapDialogTitle
+                        id="customized-dialog-title"
+                        onClose={handleClose}
+                      >
+                        Car Details
+                      </BootstrapDialogTitle>
+                      <DialogContent dividers>
+                        <CardMedia
+                          component="img"
+                          height="180"
+                          image={imgUrl}
+                          alt="car"
+                          sx={{ py: 3 }}
+                        />
+                        <Typography variant="h5" color="text.primary">
+                          Brand:{ProductName}
+                        </Typography>
+                        <Typography variant="h5" color="text.primary">
+                          Price: ${Price}
+                        </Typography>
+                        <Typography
+                          sx={{ textAlign: "center" }}
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          {Description}
+                        </Typography>
+                      </DialogContent>
+                      <DialogActions>
+                        <Button autoFocus onClick={handleClose}>
+                          Ok
+                        </Button>
+                      </DialogActions>
+                    </BootstrapDialog>
+                  </div>
                 )}
               </CardContent>
             </CardActionArea>
