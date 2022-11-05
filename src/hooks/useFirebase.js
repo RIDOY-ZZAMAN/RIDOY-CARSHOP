@@ -15,7 +15,7 @@ import initializeFireBase from "../Pages/Login/Firebase/firebase.init";
 initializeFireBase();
 const useFirebase = () => {
   const [user, setUser] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
   const [admin, setAdmin] = useState(false);
   const [token, setToken] = useState("");

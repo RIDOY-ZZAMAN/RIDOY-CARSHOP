@@ -101,7 +101,9 @@ const Product = ({ product }) => {
                 {!user.email && (
                   <div>
                     <Button
-                      variant="outlined"
+                      variant="contained"
+                      sx={{ my: 2 }}
+                      className="btn-common"
                       onClick={() => handleClickOpen(_id)}
                     >
                       See Details
@@ -120,7 +122,7 @@ const Product = ({ product }) => {
                       <DialogContent dividers>
                         <CardMedia
                           component="img"
-                          height="180"
+                          height="185"
                           image={imgUrl}
                           alt="car"
                           sx={{ py: 3 }}
