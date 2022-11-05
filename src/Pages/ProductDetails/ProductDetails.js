@@ -1,4 +1,4 @@
-import { Button, CardActionArea, Container, Grid } from "@mui/material";
+import { Button, CardActionArea, Container, Grid, Paper } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -80,14 +80,14 @@ const ProductDetails = () => {
           Purchase Our <span>{singleProduct?.ProductName}</span> Car{" "}
         </h1>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={5}>
-            <Card sx={{ maxWidth: 345 }}>
+          <Grid item xs={12} md={6}>
+            <Card sx={{ maxWidth: 445 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="140"
+                  height="220"
                   image={singleProduct?.imgUrl}
-                  alt="green iguana"
+                  alt="car image"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -106,66 +106,87 @@ const ProductDetails = () => {
               </CardActionArea>
             </Card>
           </Grid>
-          <Grid item xs={12} md={7}>
+
+          <Grid item xs={12} md={6}>
             <form
               onSubmit={handlePlaceOrder}
               className="productorder"
               style={{ marginTop: "-30px" }}
             >
-              <Typography sx={{ mt: 3 }}>Product Name</Typography>
-              <input
-                style={{ width: "80%", height: "30px", marginBottom: "15px" }}
-                type="text"
-                ref={productRef}
-                value={singleProduct?.ProductName}
-                name=""
-                id=""
-              />
-              <Typography>Your Name</Typography>
-              <input
-                style={{ width: "80%", height: "30px", marginBottom: "15px" }}
-                type="text"
-                ref={nameRef}
-                value={user?.displayName}
-                name=""
-                id=""
-              />
-              <Typography>Your Email</Typography>
-              <input
-                style={{ width: "80%", height: "30px", marginBottom: "15px" }}
-                type="text"
-                ref={emailRef}
-                value={user?.email}
-                name=""
-                id=""
-              />
-              <Typography>Your Address</Typography>
-              <input
-                style={{ width: "80%", height: "30px", marginBottom: "15px" }}
-                type="text"
-                ref={addressRef}
-                name=""
-                id=""
-              />
-              <Typography>Your Phone</Typography>
-              <input
-                style={{ width: "80%", height: "30px", marginBottom: "15px" }}
-                type="text"
-                ref={phoneRef}
-                name=""
-                id=""
-              />
-              <Typography>Status</Typography>
-              <input
-                style={{ width: "80%", height: "30px", marginBottom: "10px" }}
-                type="text"
-                ref={statusRef}
-                value="Pending"
-              />{" "}
-              <br /> <br />
-              <Button sx={{ mb: 4 }} type="submit" variant="contained">
-                Place Order
-              </Button>
+              <Paper elevation={3}>
+                <Typography sx={{ mt: 3 }}>
+                  {" "}
+                  <b>Product Name</b>
+                </Typography>
+                <input
+                  style={{
+                    width: "80%",
+                    height: "30px",
+                    marginBottom: "11px",
+                    marginTop: "10px",
+                  }}
+                  type="text"
+                  ref={productRef}
+                  value={singleProduct?.ProductName}
+                  name=""
+                  id=""
+                />
+                <Typography>
+                  <b>Your Name</b>
+                </Typography>
+                <input
+                  style={{ width: "80%", height: "30px", marginBottom: "11px" }}
+                  type="text"
+                  ref={nameRef}
+                  value={user?.displayName}
+                  name=""
+                  id=""
+                />
+                <Typography>
+                  <b>Your Email</b>
+                </Typography>
+                <input
+                  style={{ width: "80%", height: "30px", marginBottom: "11px" }}
+                  type="text"
+                  ref={emailRef}
+                  value={user?.email}
+                  name=""
+                  id=""
+                />
+                <Typography>
+                  <b>Your Address</b>
+                </Typography>
+                <input
+                  style={{ width: "80%", height: "30px", marginBottom: "11px" }}
+                  type="text"
+                  ref={addressRef}
+                  name=""
+                  id=""
+                />
+                <Typography>
+                  <b>Your Phone</b>
+                </Typography>
+                <input
+                  style={{ width: "80%", height: "30px", marginBottom: "11px" }}
+                  type="text"
+                  ref={phoneRef}
+                  name=""
+                  id=""
+                />
+                <Typography>
+                  <b>Status</b>
+                </Typography>
+                <input
+                  style={{ width: "80%", height: "30px", marginBottom: "10px" }}
+                  type="text"
+                  ref={statusRef}
+                  value="Pending"
+                />{" "}
+                <br /> <br />
+                <Button sx={{ mb: 2 }} type="submit" variant="contained">
+                  Place Order
+                </Button>
+              </Paper>
             </form>
           </Grid>
         </Grid>

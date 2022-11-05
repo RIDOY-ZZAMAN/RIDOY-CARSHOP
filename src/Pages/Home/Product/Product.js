@@ -9,6 +9,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
+import { red } from "@mui/material/colors";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -59,6 +60,8 @@ const Product = ({ product }) => {
   const history = useHistory();
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
+
+  const color = red[500];
   const handleClickOpen = (productID) => {
     setOpen(true);
     console.log(productID);
@@ -122,23 +125,26 @@ const Product = ({ product }) => {
                       <DialogContent dividers>
                         <CardMedia
                           component="img"
-                          height="185"
+                          height="240"
                           image={imgUrl}
                           alt="car"
                           sx={{ py: 3 }}
                         />
                         <Typography variant="h5" color="text.primary">
-                          Brand:{ProductName}
+                          Brand: <b>{ProductName}</b>
                         </Typography>
                         <Typography variant="h5" color="text.primary">
-                          Price: ${Price}
+                          Price: <b>${Price}</b>
                         </Typography>
                         <Typography
-                          sx={{ textAlign: "center" }}
-                          variant="body2"
-                          color="text.primary"
+                          sx={{ textAlign: "left", mb: 2 }}
+                          variant="h6"
+                          color="text.secondary"
                         >
-                          {Description}
+                          Description: {Description}
+                        </Typography>
+                        <Typography variant="h6" color={color}>
+                          Please Login To Buy This Car. Thank You
                         </Typography>
                       </DialogContent>
                       <DialogActions>
