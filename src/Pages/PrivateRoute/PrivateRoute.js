@@ -8,7 +8,7 @@ const PrivateRoute = ({ children, ...rest }) => {
   if (isLoading) {
     return <CircularProgress />;
   }
-
+  console.log(user);
   return (
     <div>
       <Route

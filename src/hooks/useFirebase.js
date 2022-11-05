@@ -15,7 +15,7 @@ import initializeFireBase from "../Pages/Login/Firebase/firebase.init";
 initializeFireBase();
 const useFirebase = () => {
   const [user, setUser] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [authError, setAuthError] = useState("");
   const [admin, setAdmin] = useState(false);
   const [token, setToken] = useState("");
@@ -73,6 +73,7 @@ const useFirebase = () => {
 
   //Persisting an user
   useEffect(() => {
+    setIsLoading(true);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
@@ -163,6 +164,7 @@ const useFirebase = () => {
     signInWithGoogle,
     token,
     isLoading,
+    setIsLoading,
   };
 };
 
